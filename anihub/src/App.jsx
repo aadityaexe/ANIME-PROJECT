@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>hui hui</h1>
+      <h1>hi ksyp</h1>
     </>
   );
 }

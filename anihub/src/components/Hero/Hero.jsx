@@ -1,4 +1,5 @@
 import heroImage from "../../assets/hero.png";
+import heroImage2 from "../../assets/hero-img-2.png";
 import "./Hero.css";
 const Hero = () => {
   return (
@@ -24,6 +25,7 @@ const Hero = () => {
           alt="Hero"
           className="w-auto h-full object-cover sm:object-cover"
         />
+        <img src={heroImage2} alt="" className="sec-hero-img" />
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ import s7 from "./Slider-assets/s7.jpg";
 import s8 from "./Slider-assets/s8.jpg";
 import s9 from "./Slider-assets/s9.jpg";
 import s10 from "./Slider-assets/s10.png";
-
+import hero from "./Slider-assets/hero.png";
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -27,6 +27,7 @@ const Slider = () => {
     { url: s8, title: "Slide 8" },
     { url: s9, title: "Slide 9" },
     { url: s10, title: "Slide 10" },
+    { url: hero, title: "Slide 10" },
   ];
 
   const prevSlide = () => {
@@ -49,7 +50,7 @@ const Slider = () => {
     <div className="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-        className="w-full h-full rounded-2xl bg-no-repeat bg-center duration-500"
+        className="w-full h-full bg-no-repeat bg-center duration-500 bg-contain"
       ></div>
       {/* Left Arrow */}
       <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">

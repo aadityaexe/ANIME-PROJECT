@@ -8,7 +8,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full top-0 left-0 bg-gray-200/30 backdrop-blur-lg backdrop-saturate-150 border border-gray-300/30 shadow-lg flex justify-between items-center p-3 z-50">
+    <div className="fixed w-full top-0 left-0 flex justify-between items-center p-3 z-50">
       <div className="logo">
         <p>here is logo</p>
       </div>

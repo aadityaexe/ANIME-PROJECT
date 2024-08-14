@@ -1,10 +1,15 @@
+.hero {
+  margin-top: 40px;
+}
+
 .hero-text {
   margin-top: 164px;
 }
 
 .sec-hero-img {
-  width: 465px;
+  width: 541px;
   position: absolute;
-  right: -765px;
-  bottom: -47px;
+  right: -748px;
+  bottom: -44px;
+
 }

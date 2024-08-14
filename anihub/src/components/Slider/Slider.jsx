@@ -49,8 +49,13 @@ const Slider = () => {
   return (
     <div className="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group">
       <div
-        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-        className="w-full h-full bg-no-repeat bg-center duration-500 bg-contain"
+        style={{
+          backgroundImage: `url(${slides[currentIndex].url})`,
+          boxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
+          WebkitBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
+          MozBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
+        }}
+        className="w-full h-full bg-no-repeat bg-center duration-500 bg-contain rounded-3xl "
       ></div>
       {/* Left Arrow */}
       <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">

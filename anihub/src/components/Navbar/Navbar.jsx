@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,11 +9,10 @@ const Navbar = () => {
 
   return (
     <div className="fixed w-full top-0 left-0 bg-gray-200/30 backdrop-blur-lg backdrop-saturate-150 border border-gray-300/30 shadow-lg flex justify-between items-center p-3 z-50">
-     
       <div className="logo">
         <p>here is logo</p>
       </div>
-      
+
       {/* Menu Icon on the right */}
       <div className="icon sm:hidden" onClick={toggleMenu}>
         <svg
@@ -32,8 +31,11 @@ const Navbar = () => {
         </svg>
       </div>
 
-
-      <div className={`list ${isMenuOpen ? 'block' : 'hidden'} sm:flex sm:gap-10 sm:px-7 sm:text-2xl absolute sm:relative top-full left-0 w-full sm:w-auto bg-gray-200/30 sm:bg-transparent`}>
+      <div
+        className={`list ${
+          isMenuOpen ? "block" : "hidden"
+        } sm:flex sm:gap-10 sm:px-7 sm:text-2xl absolute sm:relative top-full left-0 w-full sm:w-auto bg-gray-200/30 sm:bg-transparent`}
+      >
         <ul className="flex flex-col sm:flex-row items-center gap-5 p-5 sm:p-0">
           <li>About</li>
           <li>Faq</li>

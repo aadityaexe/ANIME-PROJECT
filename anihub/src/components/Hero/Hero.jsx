@@ -5,7 +5,10 @@ const Hero = () => {
   return (
     <div className="mt-10 flex overflow-hidden h-screen relative items-center hero">
       {/* Right side with text */}
-      <div className="relative w-full h-[300px] flex flex-col items-center justify-center px-8 bg-black  text-white z-10 sm:z-auto hero-text">
+      <div
+        className="relative w-full h-[300px] flex flex-col items-center justify-center px-8 bg-black  text-white z-10 sm:z-auto hero-text "
+        id="heroId"
+      >
         <span className="absolute bottom-0 h-0.5 w-[100px] bg-white animate-animate"></span>
         <span className="absolute top-0 h-0.5 w-[100px] bg-white animate-animateReverse"></span>
         <h1 className="text-4xl sm:text-6xl font-bold">

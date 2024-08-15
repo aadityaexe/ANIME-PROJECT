@@ -3,37 +3,35 @@ import bgfoot from "./Footer-assets/bgfoot.png";
 const Footer = () => {
   return (
     <footer
-      className="bg-cover bg-center text-blue-700 "
-      style={{
-        backgroundImage: `url(${bgfoot})`,
-        minHeight: "300px", // Ensure a minimum height for smaller screens
-        maxHeight: "400px", // Set the maximum height for larger screens
-      }}
+      className="relative bg-center bg-cover bg-no-repeat text-blue-600 w-full"
+      style={{ backgroundImage: `url(${bgfoot})` }}
     >
-      <div className="container mx-auto text-center h-full flex flex-col justify-center">
-        <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-8 md:mb-10 lg:mb-14 font-serif">
-          Footer Title
-        </h3>
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 lg:mb-8 font-serif">
-          Among Heaven and Hell we are the most cursed ones...
-        </p>
-        <ul className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <li>
-            <a href="hero" className="hover:underline">
-              hero
+      {/* Maintain aspect ratio with padding */}
+      <div className="pt-[50%] relative">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-purple-400">
+          <div className="mb-4">
+            <h2 className="text-4xl font-semibold">
+              Among Heaven and Hell we are the most cursed ones...
+            </h2>
+          </div>
+          <div className="flex justify-center space-x-4 mb-4">
+            <a href="#" className="text-gray-400 hover:text-white">
+              Facebook
             </a>
-          </li>
-          <li>
-            <a href="#" className="hover:underline">
-              Link 2
+            <a href="#" className="text-gray-400 hover:text-white">
+              Twitter
             </a>
-          </li>
-          <li>
-            <a href="#" className="hover:underline">
-              Link 3
+            <a href="#" className="text-gray-400 hover:text-white">
+              Instagram
             </a>
-          </li>
-        </ul>
+            <a href="#" className="text-gray-400 hover:text-white">
+              LinkedIn
+            </a>
+          </div>
+          <div className="text-gray-400">
+            &copy; 2024 Your Company. All rights reserved.
+          </div>
+        </div>
       </div>
     </footer>
   );

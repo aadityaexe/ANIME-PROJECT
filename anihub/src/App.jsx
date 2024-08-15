@@ -12,7 +12,7 @@ function App() {
   const [showWifu, setShowWifu] = useState(false);
   const [showMommy, setShowMommy] = useState(false);
   return (
-    <div className="App">
+    <div className="App overflow-hidden">
       <Navbar />
       <Hero />
       <Title title={"Slider"} subTitle={"Our Favorite Items"} />

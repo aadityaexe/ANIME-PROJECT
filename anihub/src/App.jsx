@@ -16,7 +16,7 @@ function App() {
     <div className="App overflow-hidden font-serif">
       <Navbar />
       <Hero />
-      <Title title={"Slider"} subTitle={"Our Favorite Items"} />
+      <Title title={"MITSURI KANROJI"} subTitle={"Our favorite photos"} />
       <Slider />
       <PhotosColectionTitle
         showhuk={showMommy}
@@ -29,10 +29,11 @@ function App() {
       <PhotosColectionTitle
         showhuk={showWifu}
         sethuk={setShowWifu}
-        titel={"Wifu"}
-        subTitel={"These are some hot wifu"}
+        titel={"PDF FILE"}
+        subTitel={"These are some photos for PDF FILE"}
       />
       {showWifu ? <AnimeGirls /> : ""}
+
       <WebPageCreater />
       <Footer />
     </div>

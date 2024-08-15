@@ -9,11 +9,7 @@ const Footer = () => {
       {/* Maintain aspect ratio with padding */}
       <div className="pt-[50%] relative">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-purple-400">
-          <div className="mb-4">
-            <h2 className="text-4xl font-semibold">
-              Among Heaven and Hell we are the most cursed ones...
-            </h2>
-          </div>
+          <div className="mb-4"></div>
           <div className="flex justify-center space-x-4 mb-4">
             <a href="#" className="text-gray-400 hover:text-white">
               Facebook

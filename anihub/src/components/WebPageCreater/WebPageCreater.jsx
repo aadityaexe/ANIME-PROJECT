@@ -5,6 +5,7 @@ import instagram from "./WebPageCreater-assets/instagram.png";
 import x from "./WebPageCreater-assets/x.png";
 import github from "./WebPageCreater-assets/github.png";
 import background from "./WebPageCreater-assets/bgUs.png";
+import "./WebPageCreater.css";
 const WebPageCreater = () => {
   const cards = [
     {
@@ -44,36 +45,43 @@ const WebPageCreater = () => {
       className="flex justify-center items-center p-4 min-h-screen bg-cover "
       style={{ backgroundImage: `url(${background})` }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transform transition-transform hover:scale-105"
-          >
-            <img
-              src={card.imgSrc}
-              alt={card.name}
-              className="w-full h-56 object-cover rounded-t-lg"
-            />
-            <h2 className="text-2xl font-semibold mt-6">{card.name}</h2>
-            <div className="flex mt-6 space-x-6">
-              {card.logos.map((logo, logoIndex) => (
-                <a
-                  key={logoIndex}
-                  href={logo.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={logo.src}
-                    alt={`Logo ${logoIndex + 1}`}
-                    className="w-12 h-12 object-contain"
-                  />
-                </a>
-              ))}
+      <div>
+        <div>
+          <h1 className="text-4xl text-black-900 pb-10 text-shadow-md hover:text-shadow-lg transition-all duration-300 transform hover:scale-105">
+            Among Heaven and Hell we are the most cursed ones...
+          </h1>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transform transition-transform hover:scale-105"
+            >
+              <img
+                src={card.imgSrc}
+                alt={card.name}
+                className="w-full h-56 object-cover rounded-t-lg"
+              />
+              <h2 className="text-2xl font-semibold mt-6">{card.name}</h2>
+              <div className="flex mt-6 space-x-6">
+                {card.logos.map((logo, logoIndex) => (
+                  <a
+                    key={logoIndex}
+                    href={logo.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={`Logo ${logoIndex + 1}`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

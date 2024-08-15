@@ -12,7 +12,7 @@ const Hero = () => {
         <span className="absolute bottom-0 h-0.5 w-[100px] bg-white animate-animate"></span>
         <span className="absolute top-0 h-0.5 w-[100px] bg-white animate-animateReverse"></span>
         <h1 className="text-4xl sm:text-6xl font-bold">
-          Welcome To <br /> MITSURI KANROJI
+          Welcome to <br /> WifuWiki
         </h1>
         <p className="mt-5 font-bold text-center w-3/4 sm:w-1/2">
           We all love to drink mitsuri kanroji milk.

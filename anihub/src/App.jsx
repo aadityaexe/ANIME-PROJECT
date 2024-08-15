@@ -8,11 +8,12 @@ import PhotosColectionTitle from "./components/PhotosColectionTitle/PhotosColect
 import MommySlider from "./components/MommySlider/MommySlider";
 import MommyPhotes from "./components/MommySlider/MoomyPhotes";
 import WebPageCreater from "./components/WebPageCreater/WebPageCreater";
+import Footer from "./components/Footer/Footer";
 function App() {
   const [showWifu, setShowWifu] = useState(false);
   const [showMommy, setShowMommy] = useState(false);
   return (
-    <div className="App overflow-hidden">
+    <div className="App overflow-hidden font-serif">
       <Navbar />
       <Hero />
       <Title title={"Slider"} subTitle={"Our Favorite Items"} />
@@ -33,6 +34,7 @@ function App() {
       <PhotosColectionTitle showhuk={showWifu} sethuk={setShowWifu} />
       {showWifu ? <AnimeGirls /> : ""}
       <WebPageCreater />
+      <Footer />
     </div>
   );
 }

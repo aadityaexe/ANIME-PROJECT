@@ -25,13 +25,13 @@ function App() {
         subTitel={"These are some Milf"}
       />
       {!showMommy ? <MommySlider /> : <MommyPhotes />}
+
       <PhotosColectionTitle
-        showWifu={showWifu}
-        setShowWifu={setShowWifu}
+        showhuk={showWifu}
+        sethuk={setShowWifu}
         titel={"Wifu"}
         subTitel={"These are some hot wifu"}
       />
-      <PhotosColectionTitle showhuk={showWifu} sethuk={setShowWifu} />
       {showWifu ? <AnimeGirls /> : ""}
       <WebPageCreater />
       <Footer />

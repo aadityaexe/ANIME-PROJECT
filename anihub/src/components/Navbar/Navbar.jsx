@@ -9,10 +9,6 @@ const Navbar = () => {
 
   return (
     <div className="fixed w-full top-0 left-0 flex justify-between items-center p-3 z-50">
-      <div className="logo">
-        <p>here is logo</p>
-      </div>
-
       {/* Menu Icon on the right */}
       <div className="icon sm:hidden" onClick={toggleMenu}>
         <svg

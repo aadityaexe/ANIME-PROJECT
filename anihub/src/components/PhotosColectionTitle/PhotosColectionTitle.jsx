@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-const Wifu = ({ showWifu, setShowWifu }) => {
+const PhotosColectionTitle = ({ showWifu, setShowWifu }) => {
   const showWifuPic = () => {
     setShowWifu(!showWifu);
   };
@@ -32,7 +32,7 @@ const Wifu = ({ showWifu, setShowWifu }) => {
               className="bg-gradient-to-r from-green-400 via-pink-500 to-yellow-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-green-500 hover:via-pink-600 hover:to-yellow-600 transition duration-300"
               onClick={showWifuPic}
             >
-              See MommyS
+              See Wifu
             </button>
           )}
         </div>
@@ -41,4 +41,4 @@ const Wifu = ({ showWifu, setShowWifu }) => {
   );
 };
 
-export default Wifu;
+export default PhotosColectionTitle;

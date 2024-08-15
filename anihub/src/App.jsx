@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-no-undef */
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Slider from "./components/Slider/Slider";
 import Title from "./components/Title/Title";
 import AnimeGirls from "./components/AnimeGirls/AnimeGirls";
-import Wifu from "./components/Wifu/Wifu";
 import { useState } from "react";
+import PhotosColectionTitle from "./components/PhotosColectionTitle/PhotosColectionTitle";
 
 function App() {
   const [showWifu, setShowWifu] = useState(false);
@@ -17,16 +18,15 @@ function App() {
           <Hero />
           <Title title={"Slider"} subTitle={"Our Favorite Items"} />
           <Slider />
-          <Wifu showWifu={showWifu} setShowWifu={setShowWifu} />
+          <PhotosColectionTitle showWifu={showWifu} setShowWifu={setShowWifu} />
         </>
       ) : (
         <>
-          <Wifu />
+          <PhotosColectionTitle showWifu={showWifu} setShowWifu={setShowWifu} />
           <AnimeGirls />
         </>
       )}
     </div>
   );
 }
-
 export default App;

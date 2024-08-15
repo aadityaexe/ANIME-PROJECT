@@ -41,7 +41,7 @@ const WebPageCreater = () => {
 
   return (
     <div
-      className="flex justify-center items-center p-4 min-h-screen bg-cover bg-center"
+      className="flex justify-center items-center p-4 min-h-screen bg-cover "
       style={{ backgroundImage: `url(${background})` }}
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl">

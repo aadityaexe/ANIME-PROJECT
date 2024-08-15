@@ -24,7 +24,6 @@ function App() {
         subTitel={"These are some Milf"}
       />
       {!showMommy ? <MommySlider /> : <MommyPhotes />}
-
       <PhotosColectionTitle
         showWifu={showWifu}
         setShowWifu={setShowWifu}

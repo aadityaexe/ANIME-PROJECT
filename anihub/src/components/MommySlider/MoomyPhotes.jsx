@@ -65,5 +65,4 @@ const MommyPhotes = () => {
     </div>
   );
 };
-
 export default MommyPhotes;

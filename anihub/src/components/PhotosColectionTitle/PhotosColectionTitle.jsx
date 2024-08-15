@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 const PhotosColectionTitle = ({ showhuk, sethuk, titel, subTitel }) => {
-  const showWifuPic = () => {
+  const showPic = () => {
     sethuk(!showhuk);
   };
-  const hideWifuPic = () => {
+  const hidePic = () => {
     sethuk(!showhuk);
   };
 
@@ -22,16 +22,16 @@ const PhotosColectionTitle = ({ showhuk, sethuk, titel, subTitel }) => {
           {showhuk ? (
             <button
               className="bg-gradient-to-r from-green-400 via-pink-500 to-yellow-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-green-500 hover:via-pink-600 hover:to-yellow-600 transition duration-300"
-              onClick={hideWifuPic}
+              onClick={hidePic}
             >
               Go back
             </button>
           ) : (
             <button
               className="bg-gradient-to-r from-green-400 via-pink-500 to-yellow-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-green-500 hover:via-pink-600 hover:to-yellow-600 transition duration-300"
-              onClick={showWifuPic}
+              onClick={showPic}
             >
-              See Wifu
+              See more {titel}
             </button>
           )}
         </div>

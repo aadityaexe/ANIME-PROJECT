@@ -7,6 +7,7 @@ import { useState } from "react";
 import PhotosColectionTitle from "./components/PhotosColectionTitle/PhotosColectionTitle";
 import MommySlider from "./components/MommySlider/MommySlider";
 import MommyPhotes from "./components/MommySlider/MoomyPhotes";
+import WebPageCreater from "./components/WebPageCreater/WebPageCreater";
 function App() {
   const [showWifu, setShowWifu] = useState(false);
   const [showMommy, setShowMommy] = useState(false);
@@ -32,6 +33,7 @@ function App() {
       />
       <PhotosColectionTitle showhuk={showWifu} sethuk={setShowWifu} />
       {showWifu ? <AnimeGirls /> : ""}
+      <WebPageCreater />
     </div>
   );
 }

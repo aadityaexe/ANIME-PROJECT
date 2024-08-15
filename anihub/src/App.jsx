@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Slider from "./components/Slider/Slider";
@@ -7,6 +6,7 @@ import AnimeGirls from "./components/AnimeGirls/AnimeGirls";
 import { useState } from "react";
 import PhotosColectionTitle from "./components/PhotosColectionTitle/PhotosColectionTitle";
 import MommySlider from "./components/MommySlider/MommySlider";
+import MommyPhotes from "./components/MommySlider/MoomyPhotes";
 function App() {
   const [showWifu, setShowWifu] = useState(false);
   const [showMommy, setShowMommy] = useState(false);
@@ -22,7 +22,8 @@ function App() {
         titel={"Mommys"}
         subTitel={"These are some Milf"}
       />
-      <MommySlider />
+      {!showMommy ? <MommySlider /> : <MommyPhotes />}
+
       <PhotosColectionTitle
         showWifu={showWifu}
         setShowWifu={setShowWifu}

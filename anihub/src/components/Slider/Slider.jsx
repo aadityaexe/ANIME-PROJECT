@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./Slider.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import s1 from "./Slider-assets/s1.jpg";
@@ -13,6 +14,7 @@ import s8 from "./Slider-assets/s8.jpg";
 import s9 from "./Slider-assets/s9.jpg";
 import s10 from "./Slider-assets/s10.png";
 import hero from "./Slider-assets/hero.png";
+
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -27,7 +29,7 @@ const Slider = () => {
     { url: s8, title: "Slide 8" },
     { url: s9, title: "Slide 9" },
     { url: s10, title: "Slide 10" },
-    { url: hero, title: "Slide 10" },
+    { url: hero, title: "Slide 11" },
   ];
 
   const prevSlide = () => {
@@ -46,8 +48,16 @@ const Slider = () => {
     setCurrentIndex(slideIndex);
   };
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, 2000); // Change slide every 3 seconds
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, [currentIndex]); // Dependency array to restart interval on slide change
+
   return (
-    <div className="max-w-[1400px] h-[780px] w-full m-auto py-7 px-4 relative group ">
+    <div className="max-w-[1400px] h-[780px] w-full m-auto py-7 px-4 relative group">
       <div
         style={{
           backgroundImage: `url(${slides[currentIndex].url})`,
@@ -55,7 +65,7 @@ const Slider = () => {
           WebkitBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
           MozBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
         }}
-        className="w-full h-full bg-no-repeat bg-center duration-500 bg-contain rounded-3xl "
+        className="w-full h-full bg-no-repeat bg-center duration-500 bg-contain rounded-3xl"
       ></div>
       {/* Left Arrow */}
       <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">

@@ -44,6 +44,7 @@ const WebPageCreater = () => {
     <div
       className="flex justify-center items-center p-4 min-h-screen bg-cover "
       style={{ backgroundImage: `url(${background})` }}
+      id="WE"
     >
       <div>
         <div>

@@ -16,13 +16,18 @@ function App() {
     <div className="App overflow-hidden font-serif">
       <Navbar />
       <Hero />
-      <Title title={"MITSURI KANROJI"} subTitle={"Our favorite photos"} />
+      <Title
+        title={"MITSURI KANROJI"}
+        subTitle={"Our favorite photos"}
+        Id={"MITSURI"}
+      />
       <Slider />
       <PhotosColectionTitle
         showhuk={showMommy}
         sethuk={setShowMommy}
         titel={"Mommys"}
         subTitel={"These are some Milf"}
+        Id={"MOMMY"}
       />
       {!showMommy ? <MommySlider /> : <MommyPhotes />}
 
@@ -31,6 +36,7 @@ function App() {
         sethuk={setShowWifu}
         titel={"PDF FILE"}
         subTitel={"These are some photos for PDF FILE"}
+        Id={"WIFU"}
       />
       {showWifu ? <AnimeGirls /> : ""}
 

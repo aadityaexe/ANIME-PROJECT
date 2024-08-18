@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 const Loader = () => {
   return (
     <div className="flex items-center justify-center h-10">
@@ -7,11 +6,9 @@ const Loader = () => {
     </div>
   );
 };
-
 const AnimeGirls = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     fetch("https://api.nekosapi.com/v3/images", {
       method: "GET",
@@ -37,7 +34,7 @@ const AnimeGirls = () => {
   }
 
   return (
-    <div className="container mx-auto p-4 ">
+    <div className="container mx-auto p-4 " id="PDF-FILE">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {images
           .filter((image) => isSafeImage(image.tags))

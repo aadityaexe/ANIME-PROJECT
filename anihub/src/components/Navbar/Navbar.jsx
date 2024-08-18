@@ -33,10 +33,36 @@ const Navbar = () => {
         } sm:flex sm:gap-10 sm:px-7 sm:text-2xl absolute sm:relative top-full left-0 w-full sm:w-auto bg-gray-200/30 sm:bg-transparent`}
       >
         <ul className="flex flex-col sm:flex-row items-center gap-5 p-5 sm:p-0">
-          <li>About</li>
-          <li>Faq</li>
-          <li>Updates</li>
-          <li>Contact</li>
+          <li>
+            <a href="#HERO" onClick={toggleMenu}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#MITSURI" onClick={toggleMenu}>
+              MITSURI
+            </a>
+          </li>
+          <li>
+            <a href="#MOMMY" onClick={toggleMenu}>
+              MOMMYS
+            </a>
+          </li>
+          <li>
+            <a href="#WIFU" onClick={toggleMenu}>
+              PDF FILE
+            </a>
+          </li>
+          <li>
+            <a href="#WE" onClick={toggleMenu}>
+              Creator
+            </a>
+          </li>
+          <li>
+            <a href="#ABOUT" onClick={toggleMenu}>
+              ABOUT
+            </a>
+          </li>
         </ul>
       </div>
     </div>

@@ -3,7 +3,10 @@ import heroImage2 from "../../assets/hero-img-2.png";
 import "./Hero.css";
 const Hero = () => {
   return (
-    <div className="mt-10 flex overflow-hidden h-screen relative items-center hero">
+    <div
+      className="mt-10 flex overflow-hidden h-screen relative items-center hero"
+      id="HERO"
+    >
       {/* Right side with text */}
       <div
         className="relative w-full h-[300px] flex flex-col items-center justify-center px-8 bg-black  text-white z-10 sm:z-auto hero-text "
@@ -24,12 +27,17 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Hero"
-          className="w-auto h-full object-cover sm:object-cover"
+          className="w-auto h-full object-cover sm:object-cover transition-all duration-800 ease-in-out"
+          style={{
+            filter: "drop-shadow(0px 4px 15px rgba(255, 172, 203, 0.8))",
+          }}
         />
+
         <img
           src={heroImage2}
           alt=""
-          className="w-auto h-full object-cover sm:object-cover sec-hero-img"
+          className="w-auto h-full object-cover sm:object-cover sec-hero-img transition-all duration-500 ease-in-out"
+          style={{ filter: "drop-shadow(0px 4px 15px rgba(255, 215, 0, 0.8))" }}
         />
       </div>
     </div>

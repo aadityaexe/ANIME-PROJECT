@@ -1,13 +1,30 @@
+import { useState, useEffect } from "react";
 import msg_icon from "./Contact-assets/msg-icon.png";
 import mail_icon from "./Contact-assets/mail-icon.png";
 import phone_icon from "./Contact-assets/phone-icon.png";
 import location_icon from "./Contact-assets/location-icon.png";
 import white_arrow from "./Contact-assets/white-arrow.png";
 import Nezukobg from "./Contact-assets/Nezuko.mp4";
-import { useState } from "react";
+import SmallScreenVideo from "./Contact-assets/Mitsuri.mp4";
 
 const Contact = () => {
   const [result, setResult] = useState("");
+  const [videoSource, setVideoSource] = useState(Nezukobg);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setVideoSource(SmallScreenVideo);
+      } else {
+        setVideoSource(Nezukobg);
+      }
+    };
+
+    handleResize(); // Set the initial video source
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -37,66 +54,62 @@ const Contact = () => {
       {/* Background Video */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-        src={Nezukobg}
+        src={videoSource}
         autoPlay
         loop
         muted
       ></video>
 
       <div className="container mx-auto my-5 p-5 max-w-[90%] flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
-        <div className="flex-[0_0_48%] text-black drop-shadow-lg backdrop-blur-sm bg-white/60 p-5 rounded-lg">
-          <h3 className="text-xl font-medium flex items-center mb-5 text-black drop-shadow-lg">
+        <div className="flex-[0_0_48%] text-black bg-white/60 p-5 rounded-lg transition-transform duration-300 hover:backdrop-blur-sm hover:scale-105">
+          <h3 className="text-xl font-medium flex items-center mb-5 text-black">
             Send us a message <img src={msg_icon} alt="" className="ml-2 w-9" />
           </h3>
-          <p className="max-w-[450px] leading-relaxed drop-shadow-lg">
+          <p className="max-w-[450px] leading-relaxed">
             Feel free to reach out through contact form or find our contact
             information below. Your feedback, questions, and suggestions are
             important to us as we strive to provide exceptional service to our
             Wifuwki.
           </p>
           <ul>
-            <li className="flex items-center my-5 drop-shadow-lg">
+            <li className="flex items-center my-5">
               <img src={mail_icon} alt="" className="mr-2 w-6" />
               faxlover5@gmail.com
             </li>
-            <li className="flex items-center my-5 drop-shadow-lg">
+            <li className="flex items-center my-5">
               <img src={phone_icon} alt="" className="mr-2 w-6" />
               +91 6262173362
             </li>
-            <li className="flex items-center my-5 drop-shadow-lg">
+            <li className="flex items-center my-5">
               <img src={location_icon} alt="" className="mr-2 w-6" />
               Naval Kishor Nagar Khabra
             </li>
           </ul>
         </div>
-        <div className="flex-[0_0_48%] text-black drop-shadow-lg backdrop-blur-sm bg-white/60 p-5 rounded-lg">
+        <div className="flex-[0_0_48%] text-black bg-white/60 p-5 rounded-lg transition-transform duration-300 hover:backdrop-blur-sm hover:scale-105">
           <form onSubmit={onSubmit} className="space-y-4">
             <div>
-              <label className="block font-medium drop-shadow-lg">
-                Your name
-              </label>
+              <label className="block font-medium">Your name</label>
               <input
                 type="text"
                 name="name"
                 placeholder="Enter your name"
                 required
-                className="block w-full bg-indigo-100 p-4 border-0 outline-none mt-1 drop-shadow-lg"
+                className="block w-full bg-indigo-100 p-4 border-0 outline-none mt-1"
               />
             </div>
             <div>
-              <label className="block font-medium drop-shadow-lg">
-                Your phone
-              </label>
+              <label className="block font-medium">Your phone</label>
               <input
                 type="tel"
                 name="phone"
                 placeholder="Enter your mobile number"
                 required
-                className="block w-full bg-indigo-100 p-4 border-0 outline-none mt-1 drop-shadow-lg"
+                className="block w-full bg-indigo-100 p-4 border-0 outline-none mt-1"
               />
             </div>
             <div>
-              <label className="block font-medium drop-shadow-lg">
+              <label className="block font-medium">
                 Write your messages here
               </label>
               <textarea
@@ -104,7 +117,7 @@ const Contact = () => {
                 rows="6"
                 placeholder="Enter your message"
                 required
-                className="block w-full bg-indigo-100 p-4 border-0 outline-none mt-1 resize-none drop-shadow-lg"
+                className="block w-full bg-indigo-100 p-4 border-0 outline-none mt-1 resize-none"
               ></textarea>
             </div>
             <button
@@ -114,9 +127,7 @@ const Contact = () => {
               Submit now <img src={white_arrow} alt="" className="ml-2 w-4" />
             </button>
           </form>
-          <span className="block mt-5 text-center drop-shadow-lg">
-            {result}
-          </span>
+          <span className="block mt-5 text-center">{result}</span>
         </div>
       </div>
     </div>

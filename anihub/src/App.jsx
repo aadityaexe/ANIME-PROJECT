@@ -9,6 +9,7 @@ import MommySlider from "./components/MommySlider/MommySlider";
 import MommyPhotes from "./components/MommySlider/MoomyPhotes";
 import WebPageCreater from "./components/WebPageCreater/WebPageCreater";
 import Footer from "./components/Footer/Footer";
+import Contact from "./components/Contact/Contact";
 function App() {
   const [showWifu, setShowWifu] = useState(false);
   const [showMommy, setShowMommy] = useState(false);
@@ -30,7 +31,6 @@ function App() {
         Id={"MOMMY"}
       />
       {!showMommy ? <MommySlider /> : <MommyPhotes />}
-
       <PhotosColectionTitle
         showhuk={showWifu}
         sethuk={setShowWifu}
@@ -39,8 +39,8 @@ function App() {
         Id={"WIFU"}
       />
       {showWifu ? <AnimeGirls /> : ""}
-
       <WebPageCreater />
+      <Contact />
       <Footer />
     </div>
   );

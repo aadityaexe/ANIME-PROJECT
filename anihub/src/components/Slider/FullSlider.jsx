@@ -1,8 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import "./Slider.css";
-import { useState, useEffect } from "react";
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import { RxDotFilled } from "react-icons/rx";
 import s0 from "./Slider-assets/s0.jpg";
 import s1 from "./Slider-assets/s1.jpg";
 import s2 from "./Slider-assets/s2.jpg";
@@ -56,10 +51,8 @@ import s49 from "./Slider-assets/s49.jpg";
 import s50 from "./Slider-assets/s50.jpg";
 import s51 from "./Slider-assets/s51.jpg";
 
-const Slider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const slides = [
+const FullSlider = () => {
+  const image = [
     { url: s0, title: "Slide 0" },
     { url: s1, title: "Slide 1" },
     { url: s2, title: "Slide 2" },
@@ -114,62 +107,23 @@ const Slider = () => {
     { url: s51, title: "Slide 51" },
   ];
 
-  const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  };
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      nextSlide();
-    }, 2000); // Change slide every 3 seconds
-
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
-  }, [currentIndex]); // Dependency array to restart interval on slide change
-
   return (
-    <div className="max-w-[1400px] h-[780px] w-full m-auto py-7 px-4 relative group">
-      <div
-        style={{
-          backgroundImage: `url(${slides[currentIndex].url})`,
-          boxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
-          WebkitBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
-          MozBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
-        }}
-        className="w-full h-full bg-no-repeat bg-center duration-500 bg-contain rounded-3xl"
-      ></div>
-      {/* Left Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactLeft onClick={prevSlide} size={30} />
-      </div>
-      {/* Right Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactRight onClick={nextSlide} size={30} />
-      </div>
-      <div className="flex top-4 justify-center py-2">
-        {slides.map((slide, slideIndex) => (
+    <div className="container mx-auto p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {image.map((image, index) => (
           <div
-            key={slideIndex}
-            onClick={() => goToSlide(slideIndex)}
-            className="text-2xl cursor-pointer"
+            key={index}
+            className="border border-yellow-200 rounded-lg overflow-hidden shadow-lg"
           >
-            <RxDotFilled />
+            <img
+              src={image.url}
+              alt={image.title}
+              className="w-full h-full object-cover"
+            />
           </div>
         ))}
       </div>
     </div>
   );
 };
-
-export default Slider;
+export default FullSlider;

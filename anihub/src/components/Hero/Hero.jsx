@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <div
-      className="mt-10 flex overflow-hidden h-screen relative items-center hero"
+      className="mt-30 flex overflow-hidden h-screen relative items-center hero"
       id="HERO"
     >
       {/* Right side with text */}

@@ -51,7 +51,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative pt-20">
       {/* Background Video */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"

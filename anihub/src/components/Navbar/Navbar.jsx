@@ -8,7 +8,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full top-0 left-0 flex justify-between items-center p-3 z-50">
+    <div className="fixed w-full top-0 left-0 flex justify-between items-center p-3 z-50 bg-pink-300 card-animate">
       {/* Menu Icon on the right */}
       <div className="icon sm:hidden" onClick={toggleMenu}>
         <svg

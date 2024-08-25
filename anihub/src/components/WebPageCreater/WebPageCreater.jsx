@@ -6,6 +6,7 @@ import x from "./WebPageCreater-assets/x.png";
 import github from "./WebPageCreater-assets/github.png";
 import background from "./WebPageCreater-assets/bgUs.png";
 import "./WebPageCreater.css";
+
 const WebPageCreater = () => {
   const cards = [
     {
@@ -42,7 +43,7 @@ const WebPageCreater = () => {
 
   return (
     <div
-      className="flex justify-center items-center p-4 min-h-screen bg-cover "
+      className="flex justify-center items-center p-4 min-h-screen bg-cover"
       style={{ backgroundImage: `url(${background})` }}
       id="WE"
     >
@@ -56,7 +57,7 @@ const WebPageCreater = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transform transition-transform hover:scale-105"
+              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transform transition-transform duration-500 hover:scale-105 hover:shadow-xl card-animate"
             >
               <img
                 src={card.imgSrc}

@@ -5,3 +5,19 @@
 .text-shadow-lg {
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card-animate {
+  animation: slideIn 0.6s ease-out forwards;
+}

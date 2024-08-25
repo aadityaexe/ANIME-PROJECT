@@ -18,7 +18,6 @@ function App() {
     <div className="App overflow-hidden font-serif">
       <Navbar />
       <Hero />
-
       <PhotosColectionTitle
         showhuk={showMitsuri}
         sethuk={setShowMitsuri}

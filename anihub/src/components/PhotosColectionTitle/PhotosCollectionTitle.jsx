@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./PhotosCollectionTitle.css";
 /* eslint-disable react/prop-types */
 const PhotosCollectionTitle = ({
   showhuk,

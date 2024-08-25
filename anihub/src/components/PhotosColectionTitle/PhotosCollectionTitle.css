@@ -1,0 +1,33 @@
+/* Add these styles to your CSS file */
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+h2 {
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+p {
+  animation: slideInFromRight 0.5s ease-out;
+}

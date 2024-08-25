@@ -1,0 +1,36 @@
+/* Slider.css */
+
+.slider-image {
+  transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.slider-image-enter {
+  opacity: 0;
+}
+
+.slider-image-enter-active {
+  opacity: 1;
+}
+
+.slider-image-exit {
+  opacity: 1;
+}
+
+.slider-image-exit-active {
+  opacity: 0;
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-caption {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}

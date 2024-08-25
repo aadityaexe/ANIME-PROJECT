@@ -3,6 +3,9 @@ import "./Slider.css";
 import { useState, useEffect } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
+import { CSSTransition } from "react-transition-group";
+
+// Import your images
 import s0 from "./Slider-assets/s0.jpg";
 import s1 from "./Slider-assets/s1.jpg";
 import s2 from "./Slider-assets/s2.jpg";
@@ -133,22 +136,28 @@ const Slider = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide();
-    }, 2000); // Change slide every 3 seconds
+    }, 2000); // Change slide every 2 seconds
 
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, [currentIndex]); // Dependency array to restart interval on slide change
 
   return (
-    <div className="max-w-[1400px] h-[780px] w-full m-auto py-7 px-4 relative group">
-      <div
-        style={{
-          backgroundImage: `url(${slides[currentIndex].url})`,
-          boxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
-          WebkitBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
-          MozBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
-        }}
-        className="w-full h-full bg-no-repeat bg-center duration-500 bg-contain rounded-3xl"
-      ></div>
+    <div className="max-w-[1400px] h-[780px] w-full m-auto py-7 px-4 relative group slider-container">
+      <CSSTransition
+        key={currentIndex}
+        timeout={1000}
+        classNames="slider-image"
+      >
+        <div
+          style={{
+            backgroundImage: `url(${slides[currentIndex].url})`,
+            boxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
+            WebkitBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
+            MozBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
+          }}
+          className="slider-image w-full h-full bg-no-repeat bg-center duration-500 bg-contain rounded-3xl"
+        ></div>
+      </CSSTransition>
       {/* Left Arrow */}
       <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
         <BsChevronCompactLeft onClick={prevSlide} size={30} />

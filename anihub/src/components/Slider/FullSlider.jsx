@@ -1,3 +1,4 @@
+import "./FullSlider.jsx";
 import s0 from "./Slider-assets/s0.jpg";
 import s1 from "./Slider-assets/s1.jpg";
 import s2 from "./Slider-assets/s2.jpg";
@@ -52,7 +53,7 @@ import s50 from "./Slider-assets/s50.jpg";
 import s51 from "./Slider-assets/s51.jpg";
 
 const FullSlider = () => {
-  const image = [
+  const images = [
     { url: s0, title: "Slide 0" },
     { url: s1, title: "Slide 1" },
     { url: s2, title: "Slide 2" },
@@ -110,20 +111,30 @@ const FullSlider = () => {
   return (
     <div className="container mx-auto p-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {image.map((image, index) => (
+        {images.map((image, index) => (
           <div
             key={index}
-            className="border border-yellow-200 rounded-lg overflow-hidden shadow-lg"
+            className={`transition-transform transform duration-500 ease-in-out ${
+              index % 4 === 0
+                ? "animate-slide-in-left"
+                : index % 4 === 1
+                ? "animate-slide-in-right"
+                : index % 4 === 2
+                ? "animate-slide-in-top"
+                : "animate-slide-in-bottom"
+            } border border-yellow-200 rounded-lg overflow-hidden shadow-lg group`}
           >
             <img
               src={image.url}
               alt={image.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
           </div>
         ))}
       </div>
     </div>
   );
 };
+
 export default FullSlider;

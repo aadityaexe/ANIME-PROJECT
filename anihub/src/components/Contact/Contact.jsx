@@ -6,6 +6,7 @@ import location_icon from "./Contact-assets/location-icon.png";
 import white_arrow from "./Contact-assets/white-arrow.png";
 import Nezukobg from "./Contact-assets/Nezuko.mp4";
 import SmallScreenVideo from "./Contact-assets/Mitsuri.mp4";
+import "./Contact.css";
 
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -61,7 +62,7 @@ const Contact = () => {
       ></video>
 
       <div className="container mx-auto my-5 p-5 max-w-[90%] flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
-        <div className="flex-[0_0_48%] text-black bg-white/60 p-5 rounded-lg transition-transform duration-300 hover:backdrop-blur-sm hover:scale-105">
+        <div className="flex-[0_0_48%] text-black bg-white/60 p-5 rounded-lg transition-transform duration-300 hover:backdrop-blur-sm hover:scale-105 animate-from-left">
           <h3 className="text-xl font-medium flex items-center mb-5 text-black">
             Send us a message <img src={msg_icon} alt="" className="ml-2 w-9" />
           </h3>
@@ -72,24 +73,26 @@ const Contact = () => {
             Wifuwki.
           </p>
           <ul>
-            <li className="flex items-center my-5">
+            <li className="flex items-center my-5 animate-from-left">
               <img src={mail_icon} alt="" className="mr-2 w-6" />
               faxlover5@gmail.com
             </li>
-            <li className="flex items-center my-5">
+            <li className="flex items-center my-5 animate-from-right">
               <img src={phone_icon} alt="" className="mr-2 w-6" />
               +91 6262173362
             </li>
-            <li className="flex items-center my-5">
+            <li className="flex items-center my-5 animate-from-right">
               <img src={location_icon} alt="" className="mr-2 w-6" />
               Naval Kishor Nagar Khabra
             </li>
           </ul>
         </div>
-        <div className="flex-[0_0_48%] text-black bg-white/60 p-5 rounded-lg transition-transform duration-300 hover:backdrop-blur-sm hover:scale-105">
+        <div className="flex-[0_0_48%] text-black bg-white/60 p-5 rounded-lg transition-transform duration-300 hover:backdrop-blur-sm hover:scale-105 animate-from-bottom">
           <form onSubmit={onSubmit} className="space-y-4">
             <div>
-              <label className="block font-medium">Your name</label>
+              <label className="block font-medium animate-from-top">
+                Your name
+              </label>
               <input
                 type="text"
                 name="name"
@@ -99,7 +102,9 @@ const Contact = () => {
               />
             </div>
             <div>
-              <label className="block font-medium">Your phone</label>
+              <label className="block font-medium animate-from-top">
+                Your phone
+              </label>
               <input
                 type="tel"
                 name="phone"
@@ -109,7 +114,7 @@ const Contact = () => {
               />
             </div>
             <div>
-              <label className="block font-medium">
+              <label className="block font-medium animate-from-top">
                 Write your messages here
               </label>
               <textarea

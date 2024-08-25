@@ -57,7 +57,7 @@ const WebPageCreater = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transform transition-transform duration-500 hover:scale-105 hover:shadow-xl card-animate"
+              className={`bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transform transition-transform duration-500 hover:scale-105 card-animate`}
             >
               <img
                 src={card.imgSrc}

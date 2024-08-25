@@ -58,7 +58,7 @@ import s48 from "./Slider-assets/s48.jpg";
 import s49 from "./Slider-assets/s49.jpg";
 import s50 from "./Slider-assets/s50.jpg";
 import s51 from "./Slider-assets/s51.jpg";
-import PhotosCollectionTitle from "../PhotosColectionTitle/PhotosColectionTitle";
+import PhotosCollectionTitle from "../PhotosColectionTitle/PhotosCollectionTitle";
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

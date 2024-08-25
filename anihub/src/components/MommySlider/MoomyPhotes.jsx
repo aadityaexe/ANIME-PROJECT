@@ -20,7 +20,7 @@ import ms19 from "./MommySlider-assets/ms19.jpg";
 import ms20 from "./MommySlider-assets/ms20.jpg";
 import ms21 from "./MommySlider-assets/ms21.jpg";
 import ms22 from "./MommySlider-assets/ms22.jpg";
-import PhotosCollectionTitle from "../PhotosColectionTitle/PhotosColectionTitle";
+import PhotosCollectionTitle from "../PhotosColectionTitle/PhotosCollectionTitle";
 
 const MommyPhotes = () => {
   const image = [

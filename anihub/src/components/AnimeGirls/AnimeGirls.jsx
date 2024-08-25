@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import PhotosCollectionTitle from "../PhotosColectionTitle/PhotosColectionTitle";
+import PhotosCollectionTitle from "../PhotosColectionTitle/PhotosCollectionTitle";
 
 const Loader = () => {
   return (

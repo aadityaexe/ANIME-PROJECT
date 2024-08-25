@@ -17,7 +17,7 @@
 .first-hero-img {
   position: absolute;
   left: -100%;
-  transition: left 2s ease-in-out;
+  transition: left 3.5s ease-in-out;
 }
 
 .first-hero-img.show {
@@ -27,9 +27,35 @@
 .sec-hero-img {
   position: absolute;
   bottom: -100%;
-  transition: bottom 2s ease-in-out;
+  transition: bottom 3.5s ease-in-out;
 }
 
 .sec-hero-img.show {
   bottom: 0;
+}
+
+/* Animation for h1 text */
+.h1-enter {
+  position: relative;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 3.5s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.h1-enter.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Animation for p text */
+.p-enter {
+  position: relative;
+  transform: translateY(100%) translateX(50%);
+  opacity: 0;
+  transition: transform 3.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.p-enter.show {
+  transform: translateY(0) translateX(0);
+  opacity: 1;
 }

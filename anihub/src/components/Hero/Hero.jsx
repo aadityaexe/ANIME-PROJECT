@@ -5,10 +5,15 @@ import "./Hero.css";
 
 const Hero = () => {
   const [showImages, setShowImages] = useState(false);
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowImages(true), 100); // Delay to ensure animation starts after component mounts
-    return () => clearTimeout(timer);
+    const timer = setTimeout(() => setShowImages(true), 100); // Delay for images
+    const textTimer = setTimeout(() => setShowText(true), 300); // Delay for text animations
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(textTimer);
+    };
   }, []);
 
   return (
@@ -23,10 +28,18 @@ const Hero = () => {
       >
         <span className="absolute bottom-0 h-0.5 w-[100px] bg-white animate-animate"></span>
         <span className="absolute top-0 h-0.5 w-[100px] bg-white animate-animateReverse"></span>
-        <h1 className="text-4xl sm:text-6xl font-bold">
+        <h1
+          className={`text-4xl sm:text-6xl font-bold h1-enter ${
+            showText ? "show" : ""
+          }`}
+        >
           Welcome to <br /> WifuWiki
         </h1>
-        <p className="mt-5 font-bold text-center w-3/4 sm:w-1/2">
+        <p
+          className={`mt-5 font-bold text-center w-3/4 sm:w-1/2 p-enter ${
+            showText ? "show" : ""
+          }`}
+        >
           We all love to drink mitsuri kanroji milk.
         </p>
       </div>

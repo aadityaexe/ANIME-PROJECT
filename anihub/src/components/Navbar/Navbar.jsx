@@ -42,17 +42,17 @@ const Navbar = () => {
             </li>
             <li>
               <Link to={"/mitsuri"} onClick={toggleMenu}>
-                MITSURI
+                Mitsuri
               </Link>
             </li>
             <li>
               <Link to={"/mommy"} onClick={toggleMenu}>
-                MOMMYS
+                Mommys
               </Link>
             </li>
             <li>
               <Link to={"/wifu"} onClick={toggleMenu}>
-                PDF FILE
+                PDF File
               </Link>
             </li>
             <li>
@@ -67,7 +67,7 @@ const Navbar = () => {
             </li>
             <li>
               <a href="#ABOUT" onClick={toggleMenu}>
-                ABOUT
+                About
               </a>
             </li>
           </ul>

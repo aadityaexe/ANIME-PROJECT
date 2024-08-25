@@ -1,7 +1,16 @@
+import { useEffect, useState } from "react";
 import heroImage from "../../assets/hero.png";
 import heroImage2 from "../../assets/hero-img-2.png";
 import "./Hero.css";
+
 const Hero = () => {
+  const [showImages, setShowImages] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowImages(true), 100); // Delay to ensure animation starts after component mounts
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div
       className="mt-10 flex overflow-hidden h-screen relative items-center hero"
@@ -9,7 +18,7 @@ const Hero = () => {
     >
       {/* Right side with text */}
       <div
-        className="relative w-full h-[300px] flex flex-col items-center justify-center px-8 bg-black  text-white z-10 sm:z-auto hero-text "
+        className="relative w-full h-[300px] flex flex-col items-center justify-center px-8 bg-black text-white z-10 sm:z-auto hero-text"
         id="heroId"
       >
         <span className="absolute bottom-0 h-0.5 w-[100px] bg-white animate-animate"></span>
@@ -27,7 +36,9 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Hero"
-          className="w-auto h-full object-cover sm:object-cover transition-all duration-800 ease-in-out"
+          className={`w-auto h-full object-cover sm:object-cover first-hero-img transition-all duration-800 ease-in-out ${
+            showImages ? "show" : ""
+          }`}
           style={{
             filter: "drop-shadow(0px 4px 15px rgba(255, 172, 203, 0.8))",
           }}
@@ -36,7 +47,9 @@ const Hero = () => {
         <img
           src={heroImage2}
           alt=""
-          className="w-auto h-full object-cover sm:object-cover sec-hero-img transition-all duration-500 ease-in-out"
+          className={`w-auto h-full object-cover sm:object-cover sec-hero-img transition-all duration-500 ease-in-out ${
+            showImages ? "show" : ""
+          }`}
           style={{ filter: "drop-shadow(0px 4px 15px rgba(255, 215, 0, 0.8))" }}
         />
       </div>

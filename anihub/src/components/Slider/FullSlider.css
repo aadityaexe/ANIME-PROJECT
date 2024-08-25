@@ -1,63 +1,30 @@
-@keyframes slide-in-left {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in-right {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in-top {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 @keyframes slide-in-bottom {
-  from {
+  0% {
     transform: translateY(100%);
     opacity: 0;
   }
 
-  to {
+  100% {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
-.animate-slide-in-left {
-  animation: slide-in-left 0.5s ease-in-out;
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-.animate-slide-in-right {
-  animation: slide-in-right 0.5s ease-in-out;
+.image-card {
+  opacity: 0;
+  /* Initially hidden */
 }
 
-.animate-slide-in-top {
-  animation: slide-in-top 0.5s ease-in-out;
-}
-
-.animate-slide-in-bottom {
-  animation: slide-in-bottom 0.5s ease-in-out;
+.image-card.visible {
+  animation: slide-in-bottom 0.5s ease-out forwards, fade-in 0.5s ease-out forwards;
 }

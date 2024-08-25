@@ -1,4 +1,7 @@
-import "./FullSlider.jsx";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useRef } from "react";
+
+// Directly import images
 import s0 from "./Slider-assets/s0.jpg";
 import s1 from "./Slider-assets/s1.jpg";
 import s2 from "./Slider-assets/s2.jpg";
@@ -51,9 +54,12 @@ import s48 from "./Slider-assets/s48.jpg";
 import s49 from "./Slider-assets/s49.jpg";
 import s50 from "./Slider-assets/s50.jpg";
 import s51 from "./Slider-assets/s51.jpg";
+import "./FullSlider.css";
+// Import PhotosCollectionTitle component
 import PhotosCollectionTitle from "../PhotosColectionTitle/PhotosCollectionTitle.jsx";
 
 const FullSlider = () => {
+  // Array of image objects
   const images = [
     { url: s0, title: "Slide 0" },
     { url: s1, title: "Slide 1" },
@@ -109,6 +115,32 @@ const FullSlider = () => {
     { url: s51, title: "Slide 51" },
   ];
 
+  const imagesRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    imagesRef.current.forEach((image) => {
+      observer.observe(image);
+    });
+
+    return () => {
+      imagesRef.current.forEach((image) => {
+        observer.unobserve(image);
+      });
+    };
+  }, []);
+
   return (
     <>
       <PhotosCollectionTitle
@@ -123,15 +155,8 @@ const FullSlider = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className={`transition-transform transform duration-500 ease-in-out ${
-                index % 4 === 0
-                  ? "animate-slide-in-left"
-                  : index % 4 === 1
-                  ? "animate-slide-in-right"
-                  : index % 4 === 2
-                  ? "animate-slide-in-top"
-                  : "animate-slide-in-bottom"
-              } border border-yellow-200 rounded-lg overflow-hidden shadow-lg group`}
+              ref={(el) => (imagesRef.current[index] = el)}
+              className="image-card transition-transform transform duration-500 ease-in-out border border-yellow-200 rounded-lg overflow-hidden shadow-lg group"
             >
               <img
                 src={image.url}

@@ -24,8 +24,9 @@ import ms19 from "./MommySlider-assets/ms19.jpg";
 import ms20 from "./MommySlider-assets/ms20.jpg";
 import ms21 from "./MommySlider-assets/ms21.jpg";
 import ms22 from "./MommySlider-assets/ms22.jpg";
+import PhotosCollectionTitle from "../PhotosColectionTitle/PhotosColectionTitle";
 
-const Slider = () => {
+const MommySlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
@@ -78,37 +79,46 @@ const Slider = () => {
   }, [currentIndex]); // Dependency array to restart interval on slide change
 
   return (
-    <div className="max-w-[1400px] h-[780px] w-full m-auto py-7 px-4 relative group">
-      <div
-        style={{
-          backgroundImage: `url(${slides[currentIndex].url})`,
-          boxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
-          WebkitBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
-          MozBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
-        }}
-        className="w-full h-full bg-no-repeat bg-center duration-500 bg-contain rounded-3xl"
-      ></div>
-      {/* Left Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactLeft onClick={prevSlide} size={30} />
+    <>
+      <PhotosCollectionTitle
+        titel={"Mommys"}
+        subTitel={"These are some Milf"}
+        Id={"MOMMY"}
+        path={"/mommy"}
+        path2={"/mommy-all"}
+      />
+      <div className="max-w-[1400px] h-[780px] w-full m-auto py-7 px-4 relative group">
+        <div
+          style={{
+            backgroundImage: `url(${slides[currentIndex].url})`,
+            boxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
+            WebkitBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
+            MozBoxShadow: "0px 0px 105px 45px rgba(255, 182, 193, 0.9)",
+          }}
+          className="w-full h-full bg-no-repeat bg-center duration-500 bg-contain rounded-3xl"
+        ></div>
+        {/* Left Arrow */}
+        <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+          <BsChevronCompactLeft onClick={prevSlide} size={30} />
+        </div>
+        {/* Right Arrow */}
+        <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+          <BsChevronCompactRight onClick={nextSlide} size={30} />
+        </div>
+        <div className="flex top-4 justify-center py-2">
+          {slides.map((slide, slideIndex) => (
+            <div
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
+              className="text-2xl cursor-pointer"
+            >
+              <RxDotFilled />
+            </div>
+          ))}
+        </div>
       </div>
-      {/* Right Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactRight onClick={nextSlide} size={30} />
-      </div>
-      <div className="flex top-4 justify-center py-2">
-        {slides.map((slide, slideIndex) => (
-          <div
-            key={slideIndex}
-            onClick={() => goToSlide(slideIndex)}
-            className="text-2xl cursor-pointer"
-          >
-            <RxDotFilled />
-          </div>
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 
-export default Slider;
+export default MommySlider;

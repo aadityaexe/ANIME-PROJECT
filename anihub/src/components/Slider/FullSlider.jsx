@@ -51,6 +51,7 @@ import s48 from "./Slider-assets/s48.jpg";
 import s49 from "./Slider-assets/s49.jpg";
 import s50 from "./Slider-assets/s50.jpg";
 import s51 from "./Slider-assets/s51.jpg";
+import PhotosCollectionTitle from "../PhotosColectionTitle/PhotosColectionTitle.jsx";
 
 const FullSlider = () => {
   const images = [
@@ -109,31 +110,40 @@ const FullSlider = () => {
   ];
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`transition-transform transform duration-500 ease-in-out ${
-              index % 4 === 0
-                ? "animate-slide-in-left"
-                : index % 4 === 1
-                ? "animate-slide-in-right"
-                : index % 4 === 2
-                ? "animate-slide-in-top"
-                : "animate-slide-in-bottom"
-            } border border-yellow-200 rounded-lg overflow-hidden shadow-lg group`}
-          >
-            <img
-              src={image.url}
-              alt={image.title}
-              className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
-          </div>
-        ))}
+    <>
+      <PhotosCollectionTitle
+        titel={"MITSURI KANROJI"}
+        subTitel={"These are the photos of Mitsuri"}
+        Id={"MITSURI"}
+        path={"/mitsuri"}
+        path2={"/mitsuri-all"}
+      />
+      <div className="container mx-auto p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className={`transition-transform transform duration-500 ease-in-out ${
+                index % 4 === 0
+                  ? "animate-slide-in-left"
+                  : index % 4 === 1
+                  ? "animate-slide-in-right"
+                  : index % 4 === 2
+                  ? "animate-slide-in-top"
+                  : "animate-slide-in-bottom"
+              } border border-yellow-200 rounded-lg overflow-hidden shadow-lg group`}
+            >
+              <img
+                src={image.url}
+                alt={image.title}
+                className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

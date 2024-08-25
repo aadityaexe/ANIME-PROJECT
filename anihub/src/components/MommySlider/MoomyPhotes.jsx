@@ -20,6 +20,7 @@ import ms19 from "./MommySlider-assets/ms19.jpg";
 import ms20 from "./MommySlider-assets/ms20.jpg";
 import ms21 from "./MommySlider-assets/ms21.jpg";
 import ms22 from "./MommySlider-assets/ms22.jpg";
+import PhotosCollectionTitle from "../PhotosColectionTitle/PhotosColectionTitle";
 
 const MommyPhotes = () => {
   const image = [
@@ -47,22 +48,31 @@ const MommyPhotes = () => {
     { url: ms22, title: "ms22" },
   ];
   return (
-    <div className="container mx-auto p-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {image.map((image, index) => (
-          <div
-            key={index}
-            className="border border-yellow-200 rounded-lg overflow-hidden shadow-lg"
-          >
-            <img
-              src={image.url}
-              alt={image.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
+    <>
+      <PhotosCollectionTitle
+        titel={"Mommys"}
+        subTitel={"These are some Milf"}
+        Id={"MOMMY"}
+        path={"/mommy"}
+        path2={"/mommy-all"}
+      />
+      <div className="container mx-auto p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {image.map((image, index) => (
+            <div
+              key={index}
+              className="border border-yellow-200 rounded-lg overflow-hidden shadow-lg"
+            >
+              <img
+                src={image.url}
+                alt={image.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 export default MommyPhotes;

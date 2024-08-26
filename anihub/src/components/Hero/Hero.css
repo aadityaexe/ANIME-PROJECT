@@ -39,7 +39,7 @@
   position: relative;
   transform: translateX(-100%);
   opacity: 0;
-  transition: transform 3.5s ease-in-out, opacity 0.8s ease-in-out;
+  transition: transform 3.5s ease-in-out, opacity 3.5s ease-in-out;
 }
 
 .h1-enter.show {
@@ -52,7 +52,7 @@
   position: relative;
   transform: translateY(100%) translateX(50%);
   opacity: 0;
-  transition: transform 3.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: transform 3.5s ease-in-out, opacity 3.5s ease-in-out;
 }
 
 .p-enter.show {

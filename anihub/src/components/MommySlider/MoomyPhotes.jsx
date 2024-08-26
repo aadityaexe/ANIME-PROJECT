@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+import { useInView } from "react-intersection-observer";
+import "./MommyPhotes.css";
 import ms1 from "./MommySlider-assets/ms1.jpg";
 import ms2 from "./MommySlider-assets/ms2.jpg";
 import ms3 from "./MommySlider-assets/ms3.jpg";
@@ -23,7 +26,7 @@ import ms22 from "./MommySlider-assets/ms22.jpg";
 import PhotosCollectionTitle from "../PhotosColectionTitle/PhotosCollectionTitle";
 
 const MommyPhotes = () => {
-  const image = [
+  const images = [
     { url: ms1, title: "ms1" },
     { url: ms2, title: "ms2" },
     { url: ms3, title: "ms3" },
@@ -47,6 +50,7 @@ const MommyPhotes = () => {
     { url: ms21, title: "ms21" },
     { url: ms22, title: "ms22" },
   ];
+
   return (
     <>
       <PhotosCollectionTitle
@@ -58,21 +62,35 @@ const MommyPhotes = () => {
       />
       <div className="container mx-auto p-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {image.map((image, index) => (
-            <div
-              key={index}
-              className="border border-yellow-200 rounded-lg overflow-hidden shadow-lg"
-            >
-              <img
-                src={image.url}
-                alt={image.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+          {images.map((image, index) => (
+            <ImageCard key={index} image={image} />
           ))}
         </div>
       </div>
     </>
   );
 };
+
+const ImageCard = ({ image }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2, // Adjust as needed
+  });
+
+  return (
+    <div
+      ref={ref}
+      className={`image-card border border-yellow-200 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-700 ${
+        inView ? "in-view" : ""
+      }`}
+    >
+      <img
+        src={image.url}
+        alt={image.title}
+        className="w-full h-full object-cover"
+      />
+    </div>
+  );
+};
+
 export default MommyPhotes;

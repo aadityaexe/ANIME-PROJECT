@@ -1,0 +1,19 @@
+.image-card {
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.image-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-card img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-card img:hover {
+  transform: scale(1.1) rotate(2deg);
+  /* Zoom in slightly and rotate the image for a more dynamic hover effect */
+}

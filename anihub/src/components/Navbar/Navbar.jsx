@@ -65,11 +65,6 @@ const Navbar = () => {
                 Creator
               </Link>
             </li>
-            <li>
-              <a href="#ABOUT" onClick={toggleMenu}>
-                About
-              </a>
-            </li>
           </ul>
         </div>
       </div>

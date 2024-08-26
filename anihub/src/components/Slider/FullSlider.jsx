@@ -130,13 +130,19 @@ const FullSlider = () => {
       { threshold: 0.1 }
     );
 
+    // Ensure imagesRef.current is populated with valid elements
     imagesRef.current.forEach((image) => {
-      observer.observe(image);
+      if (image) {
+        observer.observe(image);
+      }
     });
 
     return () => {
+      // Cleanup: unobserve elements only if they are valid
       imagesRef.current.forEach((image) => {
-        observer.unobserve(image);
+        if (image) {
+          observer.unobserve(image);
+        }
       });
     };
   }, []);
@@ -156,7 +162,7 @@ const FullSlider = () => {
             <div
               key={index}
               ref={(el) => (imagesRef.current[index] = el)}
-              className="image-card transition-transform transform duration-500 ease-in-out border border-yellow-200 rounded-lg overflow-hidden shadow-lg group"
+              className="image-card relative transition-transform transform duration-500 ease-in-out border border-yellow-200 rounded-lg overflow-hidden shadow-lg group"
             >
               <img
                 src={image.url}

@@ -9,16 +9,29 @@ import FullSlider from "./components/Slider/FullSlider.jsx";
 import MommyPhotes from "./components/MommySlider/MoomyPhotes.jsx";
 import MommySlider from "./components/MommySlider/MommySlider.jsx";
 import Contact from "./components/Contact/Contact.jsx";
-import WebPageCreater from "./components/WebPageCreater/WebPageCreater.jsx";
 import AnimeGirls from "./components/AnimeGirls/AnimeGirls.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+import WebPageCreater from "./components/WebPageCreater/WebPageCreater.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <>
+        <App />
+      </>
+    ),
     children: [
       {
         path: "/",
-        element: <Hero />,
+        element: (
+          <>
+            <Hero />
+            <Slider />
+            <WebPageCreater />
+            <Contact />
+            <Footer />
+          </>
+        ),
       },
       {
         path: "/mitsuri",
@@ -40,10 +53,10 @@ const router = createBrowserRouter([
         path: "/wifu",
         element: <AnimeGirls />,
       },
-      {
-        path: "/we",
-        element: <WebPageCreater />,
-      },
+      // {
+      //   path: "/we",
+      //   element: <WebPageCreater />,
+      // },
       {
         path: "/contact",
         element: <Contact />,

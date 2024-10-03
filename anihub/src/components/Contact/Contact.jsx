@@ -83,7 +83,7 @@ const Contact = () => {
             </li>
             <li className="flex items-center my-5 animate-from-right">
               <img src={location_icon} alt="" className="mr-2 w-6" />
-              Naval Kishor Nagar Khabra
+              The great tree village
             </li>
           </ul>
         </div>

@@ -30,12 +30,16 @@ const PhotosCollectionTitle = ({ titel, subTitel, Id, path, path2 }) => {
           </p>
         </div>
         <div className="text-right mt-4">
-          <button
-            className="bg-gradient-to-r from-green-400 via-pink-500 to-yellow-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-green-500 hover:via-pink-600 hover:to-yellow-600 transition duration-300"
-            onClick={handleClick}
-          >
-            {page ? "Go back" : `See more ${titel}`}
-          </button>
+          {path2 ? (
+            <button
+              className="bg-gradient-to-r from-green-400 via-pink-500 to-yellow-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-green-500 hover:via-pink-600 hover:to-yellow-600 transition duration-300"
+              onClick={handleClick}
+            >
+              {page ? "Go back" : `See more ${titel}`}
+            </button>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </section>

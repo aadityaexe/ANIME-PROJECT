@@ -26,7 +26,7 @@ const Footer = () => {
             </a> */}
           </div>
           <div className="text-gray-400">
-            &copy; 2024 Your Company. All rights reserved.
+            &copy; 2024 WIFUWIKI. All rights reserved.
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ const AnimeGirls = () => {
         subTitel={"These are some photos for PDF FILE"}
         Id={"WIFU"}
         path={"/wifu"}
-        path2={"/wifu-all"}
+        path2={false}
       />
       <div className="container mx-auto p-4" id="PDF-FILE">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

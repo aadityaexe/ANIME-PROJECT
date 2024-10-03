@@ -60,11 +60,11 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to={"/we"} onClick={toggleMenu}>
                 Creator
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

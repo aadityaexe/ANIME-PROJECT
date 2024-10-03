@@ -22,12 +22,12 @@ const WebPageCreater = () => {
       imgSrc: adityaExe,
       name: "ADITYA-EXE",
       logos: [
-        { src: instagram, link: "https://www.instagram.com/adityakumar.01/" },
+        { src: instagram, link: "https://link-to-logo1.com" },
         {
           src: x,
-          link: "https://x.com/Aadityakumar_01?t=DNUfBB6tK2t41lfWMHIIEQ&s=09",
+          link: "https://link-to-logo2.com",
         },
-        { src: github, link: "https://github.com/aadityaexe" },
+        { src: github, link: "https://link-to-logo3.com" },
       ],
     },
     {
